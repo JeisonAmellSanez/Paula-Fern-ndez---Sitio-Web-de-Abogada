@@ -15,6 +15,12 @@ $(document).ready(function(){
             });
         } 
     });
+
+    $(document).on('click', '.faq-question', function() {
+        var card = $(this).closest('.faq-card');
+        card.toggleClass('active');
+        card.find('.faq-answer').slideToggle(200);
+    });
 });
 
 // protfolio filters
@@ -46,7 +52,7 @@ $(window).on("load", function() {
 function initMap() {
 // Styles a map in night mode.
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 40.674, lng: -73.945},
+        center: {lat: 10.3910, lng: -75.4794},
         zoom: 12,
         scrollwheel:  false,
         navigationControl: false,
@@ -132,5 +138,10 @@ function initMap() {
           stylers: [{color: '#17263c'}]
         }
       ]
+    });
+    var marker = new google.maps.Marker({
+      position: {lat: 10.3910, lng: -75.4794},
+      map: map,
+      title: 'Paula Fernández Alcázar - Cartagena'
     });
 }
